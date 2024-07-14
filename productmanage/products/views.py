@@ -1,7 +1,16 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Product,Category
+from .serializers import Productserializer
+from .serializers import Categoryserializer
+from rest_framework import viewsets
 
-def check(request):
-    return HttpResponse("Hello world!")
+# Create your views here.
+class Productview(viewsets.ModelViewSet):
+    queryset=.objects.all()
+    serializer_class=Productserializer
+
+class Categoryview(viewsets.ModelViewSet):
+    queryset=Vendor.objects.all()
+    serializer_class=Categoryserializer
 
 
